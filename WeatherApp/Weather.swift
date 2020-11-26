@@ -7,8 +7,8 @@ class Weather: Decodable {
     var icon: String?
     
     enum CodingKeys: String, CodingKey {
-        case description = "description"
-        case icon = "icon"
+        case description
+        case icon
     }
 }
 
@@ -17,11 +17,10 @@ class MainData: Decodable {
     var temp: Double?
     var humidity: Int?
     var pressure: Int?
-    
     enum CodingKeys: String, CodingKey {
-        case temp = "temp"
-        case humidity = "humidity"
-        case pressure = "pressure"
+        case temp
+        case humidity
+        case pressure
     }
 }
 
@@ -30,29 +29,30 @@ class Current: Decodable {
     var weather: [Weather]?
     var main: MainData?
     var visibility: Int?
-    
     enum CodingKeys: String, CodingKey {
-        case weather = "weather"
-        case main = "main"
-        case visibility = "visibility"
+        case weather
+        case main
+        case visibility
     }
 }
 
 // Model for temp data
 class Temperature: Decodable {
     var day: Double?
-    
     enum CodingKeys: String, CodingKey {
-        case day = "day"
+        case day
     }
 }
 
 // Model for daily data
 class Daily: Decodable {
     var date: Int?
-    
+    var temp: Temperature
+    var weather: [Weather]?
     enum CodingKeys: String, CodingKey {
         case date = "dt"
+        case temp
+        case weather
     }
     
 }
@@ -60,11 +60,8 @@ class Daily: Decodable {
 // Model for weekly forecast
 class Weekly: Decodable {
     var daily: [Daily]?
-    var weather: [Weather]?
-    
     enum CodingKeys: String, CodingKey {
-        case daily = "daily"
-        case weather = "weather"
+        case daily
     }
     
 }
