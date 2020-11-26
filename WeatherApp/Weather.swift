@@ -37,3 +37,34 @@ class Current: Decodable {
         case visibility = "visibility"
     }
 }
+
+// Model for temp data
+class Temperature: Decodable {
+    var day: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case day = "day"
+    }
+}
+
+// Model for daily data
+class Daily: Decodable {
+    var date: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case date = "dt"
+    }
+    
+}
+
+// Model for weekly forecast
+class Weekly: Decodable {
+    var daily: [Daily]?
+    var weather: [Weather]?
+    
+    enum CodingKeys: String, CodingKey {
+        case daily = "daily"
+        case weather = "weather"
+    }
+    
+}
