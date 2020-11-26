@@ -9,6 +9,7 @@ class DailyViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var visibilityLabel: UILabel!
+    @IBOutlet weak var parentView: UIView!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -22,8 +23,16 @@ class DailyViewController: UIViewController {
     
     // MARK: Update data method
     func updateData() {
+        parentView.isHidden = true
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        view.addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5)
+        activityIndicator.startAnimating()
         ForecastLoader.shared.fetchCurrentData { [weak self] data, status, message in
             if status {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+                self?.parentView.isHidden = false
                 self?.updateViews(data: data!)
             } else { print(message) }
         }

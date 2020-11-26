@@ -145,6 +145,7 @@
                     <tabBarItem key="tabBarItem" title="Сегодня" id="dbp-HZ-AK2"/>
                     <connections>
                         <outlet property="humidityLabel" destination="0UK-UA-pdW" id="U0O-2b-QTp"/>
+                        <outlet property="parentView" destination="uVh-Ex-5AY" id="6U6-Kh-Ow1"/>
                         <outlet property="pressureLabel" destination="OzB-3i-BUy" id="x0R-Fv-Jdq"/>
                         <outlet property="tempLabel" destination="vxw-A0-ida" id="wzF-FE-zLr"/>
                         <outlet property="visibilityLabel" destination="7Go-Ia-lJN" id="qNc-hJ-7Qn"/>

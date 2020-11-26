@@ -21,8 +21,16 @@ class WeeklyViewController: UIViewController {
     
     // MARK: Update data method
     func updateData() {
+        tableView.isHidden = true
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        view.addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: view.frame.size.width*0.5, y: view.frame.size.height*0.5)
+        activityIndicator.startAnimating()
         ForecastLoader.shared.fetchDailyData { [weak self] data, status, message in
             if status {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+                self?.tableView.isHidden = false
                 self?.weatherData = data
                 self?.tableView.reloadData()
             }

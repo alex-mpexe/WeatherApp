@@ -46,7 +46,7 @@ class Temperature: Decodable {
 
 // Model for daily data
 class Daily: Decodable {
-    var date: Int?
+    var date: Double?
     var temp: Temperature
     var weather: [Weather]?
     enum CodingKeys: String, CodingKey {
