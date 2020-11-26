@@ -13,6 +13,15 @@ class DailyViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateData()
+    }
+    
+    // MARK: Update data method
+    func updateData() {
         ForecastLoader.shared.fetchCurrentData { [weak self] data, status, message in
             if status {
                 self?.updateViews(data: data!)
@@ -24,7 +33,7 @@ class DailyViewController: UIViewController {
     func updateViews(data: Current) {
         let weather = data.weather?.first
         let mainData = data.main
-        tempLabel.text = "\(Int(mainData?.temp ?? 0)) \u{2103}"
+        tempLabel.text = "\(Int((mainData?.temp ?? 0).rounded())) \u{2103}"
         if let icon = weather?.icon {
             if let url =  URL(string: "http://openweathermap.org/img/wn/\(icon)@4x.png") { weatherIcon.load(url: url)}
         }
