@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A38E59C256FE3A500646A76 /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A38E59B256FE3A500646A76 /* WeeklyViewController.swift */; };
 		8AC4304E256D649E00442243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4304D256D649E00442243 /* AppDelegate.swift */; };
 		8AC43050256D649E00442243 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC4304F256D649E00442243 /* SceneDelegate.swift */; };
 		8AC43052256D649E00442243 /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC43051256D649E00442243 /* DailyViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		402D4987CDB4D2C74A8E82A9 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A38E59B256FE3A500646A76 /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
 		8AC4304A256D649E00442243 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC4304D256D649E00442243 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AC4304F256D649E00442243 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8AC43051256D649E00442243 /* DailyViewController.swift */,
+				8A38E59B256FE3A500646A76 /* WeeklyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A38E59C256FE3A500646A76 /* WeeklyViewController.swift in Sources */,
 				8AC43071256E822500442243 /* ForecastLoader.swift in Sources */,
 				8AC43077256EA4AF00442243 /* Image + Extension.swift in Sources */,
 				8AC4306D256E74C700442243 /* Weather.swift in Sources */,

@@ -13,7 +13,7 @@ class DailyViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        DailyForecastLoader.shared.fetchDailyData { [weak self] data, status, message in
+        ForecastLoader.shared.fetchCurrentData { [weak self] data, status, message in
             if status {
                 self?.updateViews(data: data!)
             } else { print(message) }
